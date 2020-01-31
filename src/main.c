@@ -11,8 +11,6 @@ int main(int c, char **v) {
             int ***pathes = mx_fill_pathes(dijkstra);
 
             mx_print_this_sht(names, dijkstra, pathes);
-            mx_del_strarr(&names);
-            mx_del_matrix(matrix);
             return 0;
         }
         mx_print_err(c, v[1]);

@@ -19,7 +19,7 @@ void mx_print_err(int err, char *v1) {
     if (err == 2) {
         write(2, "error: file ", 12);
         write(2, v1, mx_strlen(v1));
-        write(2, " doesn't exist\n", 15);
+        write(2, " does not exist\n", 16);
     }
     if (err == 3) {
         write(2, "error: file ", 12);
@@ -32,6 +32,6 @@ void mx_print_err(int err, char *v1) {
         err = -err;
         write(2, "error: line ", 12);
         printint_err(err, '0');
-        write(2, " isn't valid\n", 13);
+        write(2, " is not valid\n", 13);
     }
 }

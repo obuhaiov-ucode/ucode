@@ -38,7 +38,7 @@ OBJ = mx_printchar.o \
 
 CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 
-all: install clean
+all: install
 
 install:
 	@clang $(CFLAGS) $(SRCS) -c $(SRCS)
@@ -53,4 +53,4 @@ uninstall: clean
 clean:
 	@rm -rf obj
 
-reinstall: uninstall all
+reinstall: uninstall install

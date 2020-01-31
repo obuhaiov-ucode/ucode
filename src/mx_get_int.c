@@ -15,7 +15,7 @@ int mx_get_int(char *s) {
         i--;
     }
     if (r > 2147483647) {
-        write(2, "error: line 1 isn't valid\n", 26);
+        write(2, "error: line 1 is not valid\n", 27);
         exit(1);
     }
     res = r;

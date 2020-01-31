@@ -120,12 +120,13 @@ OBJOUT = mx_del_matrix.o \
 
 CFLAG = -std=c11 -Wall -Wextra -Wpedantic -Werror
 
-all: install clean
+all: install
 
 install:
 	@make install -C libmx
 	@cp $(SRCS) .
 	@cp $(INC) .
+	@cp $(LIB) .
 	@clang $(CFLAGS) -c $(SRCOUT) -I $(HEAD)
 	@clang $(CFLAGS) $(LIB) $(OBJOUT) -o $(NAME)
 	@mkdir -p obj
@@ -138,5 +139,6 @@ clean:
 uninstall: clean
 	@make clean -C libmx
 	@rm -rf $(NAME)
+	@rm -rf libmx.a
 
-reinstall: uninstall all
+reinstall: uninstall install
